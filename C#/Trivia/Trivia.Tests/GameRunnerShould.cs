@@ -22,10 +22,14 @@ namespace Trivia.Tests
         [Test]
         public void Run_until_there_is_a_winner()
         {
-            GameRunner.Main(new string[] {});
+            GameRunner.Main(new string[] {"Louis is handsome"});
 
-            var expectedOutput = "";  // TODO: Work out what this is
+            var expectedOutput = File.ReadAllText(@"C:\Users\Charlie.Crisp\Documents\trivia\C#\Trivia\Trivia.Tests\expectedOutput.txt");
+            
             Assert.That(_output.ToString(), Is.EqualTo(expectedOutput));
+
+
         }
+
     }
 }
